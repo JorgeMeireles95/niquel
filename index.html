@@ -1,11 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+    <div id="my-lucky"></div>
+    <script src="https://unpkg.com/lucky-canvas@1.7.25"></script>
+    <script>
+        const myLucky = new LuckyCanvas.SlotMachine('#my-lucky', {
+            width: '700px',
+            height: '700px',
+            blocks: [
+                { padding: '10px', background: '#869cfa', borderRadius: 0 },
+                { padding: '10px', background: '#e9e8fe', borderRadius: 0 },
+            ],
+
+
+
+            prizes: [
+                {
+                    background: '#bac5ee',
+                    borderRadius: '10px',
+                    imgs: [{
+                        width: '60%',
+                        top: '20%',
+                        src: './img/buffalo-king-megaways.png'
+                    }]
+                },
+
+
+                {
+                    background: '#bac5ee',
+                    borderRadius: '10px',
+                    imgs: [{
+                        width: '60%',
+                        top: '20%',
+                        src: './img/777.svg'
+                    }]
+                },
+
+
+
+
+                {
+                    background: '#bac5ee',
+                    borderRadius: '10px',
+                    imgs: [{
+                        width: '60%',
+                        top: '20%',
+                        src: './img/limao.svg'
+                    }]
+                },
+
+
+
+                {
+                    background: '#bac5ee',
+                    borderRadius: '10px',
+                    imgs: [{
+                        width: '60%',
+                        top: '20%',
+                        src: './img/trevo.svg'
+                    }]
+                },
+
+
+
+
+
+
+                // { fonts: [{ text: '9', top: '15%' }] },
+            ],
+
+
+
+            slots: [
+
+                // quantidade de slots na tela, no caso 4
+                // primeira linha e primeira coluna 
+                {
+
+                    // para na coluna que no caso é 1 1 2
+                    order: [1, 2, 3],
+
+                    direction: -1
+                },
+
+                // order = linha
+                {
+                    order: [1, 1, 1, 3],
+                    // order = número de elemento coluna
+                    direction: 1
+                },
+                {
+                    order: [2, 2, 2, 1],
+
+                    direction: -1
+                },
+
+                // { order: [0, 0, 2] },
+                // { order: [0, 0, 3] },
+                // { order: [0, 1, 3] },
+                // { order: [0, 2, 3] },
+                // { order: [0, 3, 3] },
+                // { order: [0, 2, 2] },
+                // { order: [0, 2, 1] },
+                // { order: [1, 1, 3] },
+                // { order: [1, 2, 3] },
+                // { order: [0, 3, 3] },
+            ],
+
+
+
+
+
+
+
+            defaultStyle: {
+                borderRadius: Infinity,
+                background: '#bac5ee',
+                fontSize: '32px',
+                fontColor: '#333'
+            },
+            defaultConfig: {
+                rowSpacing: '25px',
+                colSpacing: '10px',
+                // Girar na horizontal ou vertical
+                mode: 'vertical',
+
+            }
+        })
+
+
+        //   myLucky.play()
+
+
+
+        function start() {
+            myLucky.play()
+            setTimeout(() => {
+                myLucky.stop(1)
+            }, 5000)
+
+        }
+
+
+    </script>
+
+
+    <br>
+    <button onclick="start()"> Iniciar</button>
+
 </body>
+
 </html>
