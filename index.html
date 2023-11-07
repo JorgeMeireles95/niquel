@@ -9,69 +9,120 @@
 
 <body>
     <div id="my-lucky"></div>
+
+
     <script src="https://unpkg.com/lucky-canvas@1.7.25"></script>
     <script>
         const myLucky = new LuckyCanvas.SlotMachine('#my-lucky', {
-            width: '700px',
-            height: '700px',
+            width: '1000px',
+            height: '800px',
             blocks: [
-                { padding: '10px', background: '#869cfa', borderRadius: 0 },
-                { padding: '10px', background: '#e9e8fe', borderRadius: 0 },
+                { padding: '8px', background: '#D8A72E', borderRadius: 0 },
+                { padding: '2px', background: '#D8A72E', borderRadius: 0 },
             ],
 
 
 
             prizes: [
-                {
-                    background: '#bac5ee',
-                    borderRadius: '10px',
-                    imgs: [{
-                        width: '60%',
-                        top: '20%',
-                        src: './img/buffalo-king-megaways.png'
-                    }]
-                },
+
+            // imagem tem que existir se nao, nada é rederizado
+                // {
+                //     background: '#bac5ee',
+                //     borderRadius: '10px',
+                //     imgs: [{
+                //         width: '60%',
+                //         top: '20%',
+                //         src: './img/img/buffalo-king-megaways.png'
+                //     }]
+                // },
 
 
                 {
-                    background: '#bac5ee',
-                    borderRadius: '10px',
+                    
+                    borderRadius: '0px',
                     imgs: [{
                         width: '60%',
                         top: '20%',
-                        src: './img/777.svg'
-                    }]
-                },
-
-
-
-
-                {
-                    background: '#bac5ee',
-                    borderRadius: '10px',
-                    imgs: [{
-                        width: '60%',
-                        top: '20%',
-                        src: './img/limao.svg'
-                    }]
-                },
-
-
-
-                {
-                    background: '#bac5ee',
-                    borderRadius: '10px',
-                    imgs: [{
-                        width: '60%',
-                        top: '20%',
-                        src: './img/trevo.svg'
+                        src: './img/fan.svg'
                     }]
                 },
 
 
 
 
+                {
+                   
+                    borderRadius: '0px',
+                    imgs: [{
+                        width: '60%',
+                        top: '20%',
+                        src: './img/vampiro3.svg'
+                    }]
+                },
 
+
+
+                {
+                   
+                    borderRadius: '0px',
+                    imgs: [{
+                        width: '60%',
+                        top: '20%',
+                        src: './img/bruxa.svg'
+                    }]
+                },
+
+
+
+                {
+          
+                    borderRadius: '0px',
+                    imgs: [{
+                        width: '60%',
+                        top: '20%',
+                        src: './img/diabo.svg'
+                    }]
+                },
+
+
+
+                {
+                 
+                    borderRadius: '0px',
+                    imgs: [{
+                        width: '60%',
+                        top: '20%',
+                        src: './img/frank.svg'
+                    }]
+                },
+
+
+
+                
+                {
+                  
+                    borderRadius: '0px',
+                    imgs: [{
+                        width: '60%',
+                        top: '20%',
+                        src: './img/magic.svg'
+                    }]
+                },
+
+
+
+
+
+                
+                {
+                   
+                    borderRadius: '0px',
+                    imgs: [{
+                        width: '60%',
+                        top: '20%',
+                        src: './img/abobora.svg'
+                    }]
+                }
 
                 // { fonts: [{ text: '9', top: '15%' }] },
             ],
@@ -85,23 +136,35 @@
                 {
 
                     // para na coluna que no caso é 1 1 2
-                    order: [1, 2, 3],
+                    order: [0, 1, 2,3,4,5,6],
 
-                    direction: -1
+                    direction: -1,
                 },
 
                 // order = linha
                 {
-                    order: [1, 1, 1, 3],
+                    order: [6, 5, 4, 3,2,1,0],
                     // order = número de elemento coluna
                     direction: 1
                 },
                 {
-                    order: [2, 2, 2, 1],
+                    order: [5, 3, 1, 4,6,2],
 
                     direction: -1
                 },
 
+
+                {
+                    order: [5, 3, 1, 4,6,2],
+
+                    direction: 1
+                },
+
+                {
+                    order: [5, 3, 1, 4,6,2],
+
+                    direction: -1
+                }
                 // { order: [0, 0, 2] },
                 // { order: [0, 0, 3] },
                 // { order: [0, 1, 3] },
@@ -121,16 +184,19 @@
 
 
             defaultStyle: {
-                borderRadius: Infinity,
-                background: '#bac5ee',
+                borderRadius: 2,
+                background: 'BLACK',
                 fontSize: '32px',
-                fontColor: '#333'
+                fontColor: '#333',
+                
+                
             },
             defaultConfig: {
-                rowSpacing: '25px',
-                colSpacing: '10px',
+                rowSpacing: '0px',
+                colSpacing: '8px',
                 // Girar na horizontal ou vertical
                 mode: 'vertical',
+ 
 
             }
         })
